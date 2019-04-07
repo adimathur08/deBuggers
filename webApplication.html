@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<script src="a.js"></script>-->
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
+
+    <script>
+      var config = {
+apiKey:"AIzaSyDyLLBZa3YKSsHjEd9aiPt3mfM7x8_nFJs",
+authDomain:  "fir-database-4020e.firebaseapp.com",
+databaseURL: "https://fir-database-4020e.firebaseio.com",
+storageBucket: "fir-database-4020e.appspot.com"
+//messagingSenderId : 
+};
+
+firebase.initializeApp(config);
+
+
+var db=firebase.database();
+//var ref=db.ref("workspace");
+
+
+//ref.update({work:"HHfhfh"});
+function set()  
+{
+  var data=document.getElementById("texthere").value;
+    db.ref("workspace/-LboEi2euNhbVw20HOXJ").update({work:data});
+  
+}
+
+
+
+    </script>
+    <style>
+       /*div.noti{
+
+        overflow: auto;
+        width: 80%;
+        height: 450px;
+        background-color: lightblue; 
+       }*/
+       #container
+       {
+           background-color: white;
+
+           height: 750px;
+           
+       }
+       #header
+       {
+           background-color: grey;
+           height: 35px;
+           padding: 35px;
+           
+       }
+       #menu
+       {
+           background-color: black;
+           height: 50px;
+           
+       }
+       #containt
+       {
+           
+           height: 550px;
+       }
+        
+         #mcontaint
+       {
+           
+           height: 550px;
+           width: 70%;
+           /*background-color: #f0f0f0;*/
+           background-color: #b4b4b4;
+           float: left;
+       }
+
+        textarea {
+                        width: 95%;
+                        height: 450px;
+                        align-content: left;
+                        /* padding: 12px 20px; */
+                        box-sizing: border-box;
+                        border: 5px solid #ccc;
+                        border-radius: 8px;
+                        background-color: #f0f0f0;
+                        font-size: 16px;
+                        resize: none;
+                      }
+        #rcontaint
+       {
+           background-color: white;
+           height: 550px;
+           width: 30%;
+           float: left;
+       }
+       #footer
+       {
+           background-color: grey;
+           height: 50px;
+           
+       }
+    </style>
+
+    <script type="text/javascript">
+              function myFunction() {
+              var popup = document.getElementById("myPopup");
+              popup.classList.toggle("show");
+              }
+    </script>
+        
+    
+
+
+    <style>
+            /* Popup container - can be anything you want */
+            .popup {
+              position: absolute;
+              
+              width: 80%;
+              height: 100px;
+              cursor: pointer;
+              -webkit-user-select: none;
+              -moz-user-select: none;
+              -ms-user-select: none;
+              user-select: none;
+            }
+
+            /* The actual popup */
+            .popup .popuptext {
+              visibility: hidden;
+              width: 100%;
+              height: 80px;
+              background-color: #555;
+              color: #fff;
+              text-align: center;
+              border-radius: 6px;
+              padding: 8px 0;
+              position: absolute;
+              z-index: 1;
+              bottom: 125%;
+              left: 23%;
+              margin-left: -80px;
+            }
+
+            /* Popup arrow 
+            .popup .popuptext::after {
+              content: "";
+              position: absolute;
+              top: 100%;
+              left: 5%;
+              margin-left: -5px;
+              border-width: 5px;
+              border-style: solid;
+              border-color: #555 transparent transparent transparent;
+            }
+            */
+            /* Toggle this class - hide and show the popup */
+            .popup .show {
+              visibility: visible;
+              -webkit-animation: fadeIn 1s;
+              animation: fadeIn 1s;
+            }
+
+            /* Add animation (fade in the popup) */
+            @-webkit-keyframes fadeIn {
+              from {opacity: 0;} 
+              to {opacity: 1;}
+            }
+
+            @keyframes fadeIn {
+              from {opacity: 0;}
+              to {opacity:1 ;}
+            }
+            </style>
+
+
+    </head>
+    <body>
+        <div id="container">
+            <div id="header">
+              <h1><center><font face="Verdana"><b>My WorkSpace</b></font></center>
+              </h1>
+            </div> 
+            <div id="menu"></div>
+            <div id="containt">                
+                <div id="mcontaint">
+                  <center>
+                    <h3>WorkSpace</h3>
+                  </center>
+                 
+                 <form>
+                   <center>
+                    <textarea id="texthere" onkeyup="set()"></textarea>
+                 </center>
+                 </form>
+
+
+                </div>
+                <div id="rcontaint">
+                  <center>
+                    <h3>Notifications<br><br></h3>
+
+                    
+                    <div class="popup" onclick="myFunction()">Click me to toggle the popup!
+                    <span class="popuptext" id="myPopup"><pre><br>Notification Message</pre></span>
+                    </div>
+                  </center>
+                </div>
+            </div>
+            <div id="footer">
+              <marquee><pre><h3>Designed       with       🖤       by       team       <b>deBuggers.</b></h3></pre></marquee>
+
+            </div>
+        </div>
+    </body>
+</html>
